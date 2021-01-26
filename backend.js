@@ -23,6 +23,14 @@ app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "reserve.html"));
   });
 
+  app.get("/api/tables", function(req, res) {
+    return res.json(tables);
+  })
+
+  app.get("/api/waitlist", function(req, res){
+    return res.json(waitList);
+  })
+
 
 app.listen(PORT, function(){
     console.log("app listening on PORT:" + PORT);
